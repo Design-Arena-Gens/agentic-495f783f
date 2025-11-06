@@ -1,0 +1,258 @@
+:root {
+  color-scheme: light dark;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background: radial-gradient(circle at top, #0f172a 0%, #020617 45%, #000 100%);
+  color: #f8fafc;
+  min-height: 100%;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 100vh;
+  padding: 3rem 1rem 4rem;
+}
+
+a {
+  color: inherit;
+}
+
+.app-shell {
+  width: min(960px, 100%);
+  display: grid;
+  gap: 1.5rem;
+  background: rgba(15, 23, 42, 0.8);
+  border: 1px solid rgba(148, 163, 184, 0.2);
+  border-radius: 1.5rem;
+  padding: 2.5rem clamp(1.5rem, 2vw, 3rem);
+  backdrop-filter: blur(18px);
+  box-shadow: 0 20px 60px rgba(15, 23, 42, 0.45);
+}
+
+.app-header {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.app-title {
+  margin: 0;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  font-size: clamp(2rem, 3.2vw, 3.1rem);
+}
+
+.app-subtitle {
+  color: #cbd5f5;
+  margin: 0;
+  line-height: 1.4;
+  font-size: clamp(1rem, 2vw, 1.1rem);
+}
+
+.controls {
+  background: rgba(15, 23, 42, 0.9);
+  border-radius: 1.25rem;
+  border: 1px solid rgba(148, 163, 184, 0.15);
+  padding: 1.5rem;
+  display: grid;
+  gap: 1.25rem;
+}
+
+.controls .group {
+  display: grid;
+  gap: 0.5rem;
+}
+
+.slider-row {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.slider-row input[type="range"] {
+  flex: 1;
+}
+
+.input-inline {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.input-inline label {
+  flex: 1;
+  min-width: 120px;
+  display: grid;
+  gap: 0.35rem;
+}
+
+.input-inline input {
+  padding: 0.6rem 0.75rem;
+  border-radius: 0.75rem;
+  border: 1px solid rgba(148, 163, 184, 0.4);
+  background: rgba(15, 23, 42, 0.65);
+  color: inherit;
+}
+
+.controls small {
+  color: rgba(226, 232, 240, 0.6);
+}
+
+.dropzone {
+  border: 2px dashed rgba(148, 163, 184, 0.35);
+  border-radius: 1.25rem;
+  padding: 2.5rem 1.5rem;
+  text-align: center;
+  cursor: pointer;
+  transition: border 0.2s ease, background 0.2s ease;
+  background: rgba(15, 23, 42, 0.75);
+}
+
+.dropzone:hover,
+.dropzone.active {
+  border-color: rgba(148, 163, 184, 0.85);
+  background: rgba(15, 23, 42, 0.9);
+}
+
+.dropzone input {
+  display: none;
+}
+
+.dropzone-icon {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.preview-grid {
+  display: grid;
+  gap: 1.25rem;
+}
+
+.preview-grid h3 {
+  margin: 0;
+}
+
+.card-grid {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+}
+
+.preview-card {
+  border-radius: 1.25rem;
+  background: rgba(15, 23, 42, 0.9);
+  border: 1px solid rgba(148, 163, 184, 0.2);
+  padding: 1rem;
+  display: grid;
+  gap: 0.75rem;
+}
+
+.stat-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.95rem;
+}
+
+.progress {
+  appearance: none;
+  width: 100%;
+  height: 0.8rem;
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.progress::-webkit-progress-bar {
+  background: rgba(148, 163, 184, 0.25);
+}
+
+.progress::-webkit-progress-value {
+  background: linear-gradient(120deg, #38bdf8, #22d3ee);
+}
+
+.progress::-moz-progress-bar {
+  background: linear-gradient(120deg, #38bdf8, #22d3ee);
+}
+
+.button-row {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+button {
+  border: none;
+  border-radius: 999px;
+  padding: 0.75rem 1.6rem;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.btn-primary {
+  background: linear-gradient(120deg, #38bdf8, #22d3ee);
+  color: #0f172a;
+}
+
+.btn-secondary {
+  background: rgba(148, 163, 184, 0.15);
+  color: rgba(226, 232, 240, 0.9);
+}
+
+.badge {
+  display: inline-block;
+  padding: 0.25rem 0.75rem;
+  border-radius: 999px;
+  background: rgba(226, 232, 240, 0.12);
+  font-size: 0.75rem;
+}
+
+.empty-state {
+  text-align: center;
+  color: rgba(226, 232, 240, 0.7);
+  padding: 1.5rem 0;
+}
+
+.flex-between {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.flex-between span {
+  font-size: 0.95rem;
+}
+
+.inline-code {
+  background: rgba(15, 23, 42, 0.75);
+  padding: 0.15rem 0.4rem;
+  border-radius: 0.5rem;
+  font-family: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Monaco,
+    Consolas, "Liberation Mono", "Courier New", monospace;
+  font-size: 0.85rem;
+}
+
+@media (max-width: 640px) {
+  body {
+    padding: 1.5rem 1rem 3rem;
+  }
+
+  .app-shell {
+    padding: 1.75rem 1.1rem;
+    border-radius: 1.1rem;
+  }
+}
